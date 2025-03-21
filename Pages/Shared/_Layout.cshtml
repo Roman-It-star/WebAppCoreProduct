@@ -1,0 +1,19 @@
+﻿<!DOCTYPE <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Razor Page</title>
+    </head>
+    <body>
+        <div>
+                <h1>Система учета</h1>
+                <div>
+                    <ul>
+                        <li><a asp-page="/Index">Главная</a></li>
+                        <li><a asp-page="/Product">Продукт</a></li>
+                    </ul>
+                </div>
+                @RenderBody()
+        </div>
+        <div>@DateTime.Now.Year.ToString() - Верещагин Р.В.</div>
+    </body>
+</html>
