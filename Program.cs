@@ -1,6 +1,11 @@
+using WebAppCoreProduct.Interface;
+using WebAppCoreProduct.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<IDiscountService, DiscountService>();
+
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

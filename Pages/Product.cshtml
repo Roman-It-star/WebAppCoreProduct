@@ -1,12 +1,21 @@
-﻿@page
+﻿@page "{handler?}"
 @model ProductModel
+
+<h2>Расчет цены товара</h2>
+
 <form method="post">
     <label for="name">Название товара</label><br />
     <input type="text" name="name" /><br />
     <label for="price">Цена</label><br />
     <input type="number" name="price" /><br /><br />
-    <input type="submit" value="Получить скидку" /><br />
+
+    <input type="submit" asp-page-handler="" value="Стандартная скидка (18%)" /><br /><br />
+    <input type="submit" asp-page-handler="DoubleDiscount" value="Двойная стандартная скидка" /><br /><br />
+
+    <!-- Пользовательская скидка -->
+    <label for="discount">Введите свою скидку (%)</label><br />
+    <input type="number" name="discount" min="0" max="100" step="0.1" /><br />
+    <input type="submit" asp-page-handler="Discont" value="С учетом своей скидки" /><br />
 </form>
+
 <h3>@Model.MessageRezult</h3>
-@{
-}
